@@ -4,5 +4,7 @@ let audio = document.querySelector("#audio");
 
 btn.addEventListener("click", () => {
   body.classList.toggle("on");
+  document.getElementById("home-content").classList.toggle("on");
+
   audio.play();
 });

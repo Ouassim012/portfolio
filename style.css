@@ -27,7 +27,8 @@ html{
 
 
 body{
-    background: var(--bg-color);
+    background: url(back.jpg) no-repeat;
+    background-size: cover;
     color: var(--text-color);
 }
 .header{
@@ -90,6 +91,12 @@ section{
     height: 430px;
     z-index: -1;
     margin-left: 700px;
+}
+#shape:nth-child(2){
+    z-index: -2;
+    background-color: var(--text-color);
+    border-radius: 60% 80% 70% 30% / 34% 30% 70% 76% ;
+
 }
 .home-content{
     max-width: 60rem;
@@ -213,8 +220,11 @@ color: transparent;
 }
 /* light bulb*/
 body.on {
-    background: radial-gradient(#555, #111);
+    background: #0d2433;
 
+}
+.home-content>h1.on{
+    color: var(--bg-color);
 }
 
 .wire {
@@ -230,27 +240,29 @@ body.on {
 /* Styles for the bulb when it's off */
 .bulb {
     position: absolute;
-    width: 20px; /* Adjust the width to make the bulb smaller */
-    height: 20px; /* Adjust the height to make the bulb smaller */
+    width: 17px; /* Adjust the width to make the bulb smaller */
+    height: 17px; /* Adjust the height to make the bulb smaller */
     background: transparent;
     border-radius: 50%;
     z-index: -4;
-    margin-left: -19.7vw;
-    margin-top: -2vh;
+    margin-left: -19.55vw;
+    margin-top: -1.5vh;
     transform: rotate(180deg);
-    
+
 }
 
 .bulb:before {
     content: "";
     position: absolute;
-    left: 4.3px; /* Adjust the left position to center it */
+    left: 0.5px; /* Adjust the left position to center it */
     top: -17px; /* Adjust the top position to maintain the appearance */
     width: 12px; /* Adjust the width */
     height: 13px; /* Adjust the height */
-    background: lightgray;
-    border-top: 12px solid #112e42; /* Adjust the border-top size */
+    background: transparent;
+    border-top: 12px solid transparent; /* Adjust the border-top size */
     border-radius: 6px;
+    z-index: 4;
+    overflow: hidden;
 }
 
 body.on .bulb::after {
@@ -272,7 +284,7 @@ body.on .bulb {
 }
 
 body.on .bulb::before {
-    background: #fff;
+    background: transparent;
 }
 
 
@@ -323,4 +335,95 @@ body.on .bulb::before {
 
 #audio {
     display: none;
+}
+
+
+/*star*/
+.star {
+    width: 20px;
+    height: 20px;
+    background: var(--main-color);
+    clip-path: polygon(50% 0%, 61.8% 38.2%, 100% 50%, 61.8% 61.8%, 50% 100%, 38.2% 61.8%, 0% 50%, 38.2% 38.2%);
+    position: absolute;
+    top: 60px;
+    left: 1000px;    
+}
+.star:nth-child(odd){
+    top: 70px;
+    background-color: var(--second-bg-color);
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 120px;
+    left: 800px;
+}
+.home-imgHover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 86%;
+    background: transparent;
+    transition: 0.5s;
+
+}
+.home-imgHover:hover{
+    background: url(back.jpg);
+    opacity: .6;
+
+}
+
+/*ABOUT*/
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:2em;
+    background: url(back.jpg) no-repeat;
+    padding-bottom:  6rem;
+    background-size: cover;
+
+}
+.heading{
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.heading span{
+    color: var(--main-color);
+}
+.about-img{
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.about-img img{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+
+}
+.about-img .circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid red;
+    border-bottom: .2rem solid red;
+    border-right: .2rem solid var(--main-color);
+    border-left: .2rem solid var(--main-color);
+
+
 }
